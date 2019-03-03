@@ -1,0 +1,45 @@
+{
+  "name": "hackerbay",
+  "version": "1.0.0",
+  "description": "A.P.I construction 1st round ",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon ./server/server.js --exec babel-node -e js",
+    "lint": "standard",
+    "test": "mocha ./server/test/test.js --timeout 10000 --exit",
+    "_comment": "Note: --exit in the test element is to force the test program to exit after finishing in case we use done()",
+    "coverage": "nyc --reporter=lcov --reporter=text-lcov npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vickywane"
+  },
+  "keywords": [
+    "jwt",
+    "json"
+  ],
+  "author": "Nwani Victory",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/cli": "^7.0.0",
+    "@babel/core": "^7.2.0",
+    "@babel/node": "^7.0.0",
+    "@babel/preset-env": "^7.0.0",
+    "babel-core": "7.0.0-bridge.0",
+    "mocha": "^6.0.2",
+    "nodemon": "^1.18.8",
+    "standard": "^12.0.1"
+  },
+  "dependencies": {
+    "chai-http": "^4.2.1",
+    "cors": "^2.8.5",
+    "debug": "^4.1.1",
+    "esm": "^3.2.9",
+    "express": "^4.16.4",
+    "fast-json-patch": "^2.0.7",
+    "jsonwebtoken": "^8.5.0",
+    "node-thumbnail": "^0.15.0",
+    "nodemon": "^1.18.10",
+    "tracer": "^0.9.8"
+  }
+}
