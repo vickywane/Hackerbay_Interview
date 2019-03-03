@@ -1,26 +1,78 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
+import axios from "axios";
+
+
+
 
 class App extends Component {
+
+  state = {
+    picker: {
+      endopoint: 'public'
+    }
+
+  }
+
+  componentDidMount() {
+    axios.post(`http://127.0.0.1:3000/user/login`).then(res => {
+      console.log(res);
+
+    })
+  }
+
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
+ 
+        <div>
+          <header className="App-header">
+            <text> HACKERBAY TEST INTERVIEW </text>
+          </header>
+
+          <form onSubmit={this.handleSubmit}
+            className="Picker">
+            <label>
+              Select Endpoint :
+          <select value='' >
+                <option value="Public">Public</option>
+                <option value="Private">Private</option>
+              </select>
+            </label>
+          </form>
+
+          <form className="Input-Box">
+            <label
+              className="Label"
+            >
+              Enter Username
+            <input type="text"
+                name="name "
+                placeholder=" Username "
+                className="Input"
+              />
+
+            </label>
+
+            <label
+              className="Label"
+            >
+              Enter Password
+  
+            <input type="text"
+                name="name "
+                placeholder=" Username "
+                className="Input"
+              />
+            </label>
+            <button
+              onSubmit={this.submit}
+            >
+              LOGIN
+          </button>
+          </form>
+        </div>
+
+     
     );
   }
 }
